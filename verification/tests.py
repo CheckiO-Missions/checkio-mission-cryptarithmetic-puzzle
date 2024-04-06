@@ -29,40 +29,43 @@ numeral_words_dic = {
 }
 
 
+def make_answer_dict(alphabets):
+    return {a: i for i, a in enumerate(alphabets) if a != ' '}
+
+
+def make_tests(*tests):
+    for test in tests:
+        words, answer = test
+        yield {
+            'input': [words.split()],
+            'answer': make_answer_dict(answer),
+        }
+
+
 def make_numeral_words_tests(*tests):
     for test in tests:
         nums, answer = test
         yield {
             'input': [[numeral_words_dic[n] for n in nums]],
-            'answer': {a: i for i, a in enumerate(answer) if a != ' '},
+            'answer': make_answer_dict(answer)
         }
 
 
 TESTS = {
-    "Basics": [
-        {
-            'input': [['SEND', 'MORE', 'MONEY']],
-            'answer': {'S': 9, 'E': 5, 'N': 6, 'D': 7, 'M': 1, 'O': 0, 'R': 8, 'Y': 2},
-        },
-        {
-            'input': [['BLACK', 'GREEN', 'ORANGE']],
-            'answer': {'A': 2, 'C': 0, 'R': 3, 'K': 8, 'G': 5, 'N': 6, 'O': 1, 'B': 7, 'L': 9, 'E': 4},
-        },
-        {
-            'input': [['POTATO', 'TOMATO', 'PUMPKIN']],
-            'answer': {'N': 2, 'O': 6, 'I': 7, 'T': 8, 'A': 4, 'K': 9, 'M': 3, 'P': 1, 'U': 0},
-        },
-        {
-            'input': [['KYOTO', 'OSAKA', 'TOKYO']],
-            'answer': {'A': 0, 'K': 4, 'O': 3, 'S': 2, 'Y': 1, 'T': 7},
-        },
-    ],
+    "Basics": list(make_tests(
+        #                                0123456789
+        ('SEND MORE MONEY',             'OMY  ENDRS'),
+        ('BLACK GREEN ORANGE',          'COAREGNBKL'),
+        ('POTATO TOMATO PUMPKIN',       'UPNMA OITK'),
+        ('KYOTO OSAKA TOKYO',           'AYSOK  T  '),
+    )),
     "Numeral": list(make_numeral_words_tests(
-        ([6, 7, 7, 20], 'XTNWYISVE '),
-        ([10, 10, 40, 60], 'NIFSXEYRTO'),
-        ([1, 9, 20, 50, 80], 'GHYTEIWFNO'),
-        ([1, 2, 3, 3, 11, 20], 'VETWYNOLRH'),
-        ([6, 7, 9, 12, 16, 20, 70], 'XTLINWESYV'),
-        ([1, 2, 5, 9, 11, 12, 50, 90], 'VTFOLEINWY'),
+        #                                0123456789
+        ([6, 7, 7, 20],                 'XTNWYISVE '),
+        ([10, 10, 40, 60],              'NIFSXEYRTO'),
+        ([1, 9, 20, 50, 80],            'GHYTEIWFNO'),
+        ([1, 2, 3, 3, 11, 20],          'VETWYNOLRH'),
+        ([6, 7, 9, 12, 16, 20, 70],     'XTLINWESYV'),
+        ([1, 2, 5, 9, 11, 12, 50, 90],  'VTFOLEINWY'),
     )),
 }
