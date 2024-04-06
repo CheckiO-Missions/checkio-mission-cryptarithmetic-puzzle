@@ -1,0 +1,64 @@
+<!-- Describe task in general -->
+
+<p style="text-align: justify;">
+This is a mission to create a solver for the <a href="https://en.wikipedia.org/wiki/Verbal_arithmetic">cryptarithm puzzle</a>.
+In this puzzle, each letter must be assigned a one-digit number to complete the calculation.
+</p>
+<p>
+    You are given a list of words.
+
+The last word is the sum.
+You have to return a dictionary with the alphabets as keys and the one-digit numbers as values.
+</p>
+
+<p style="text-align: justify;">
+    <strong>NOTE:</strong>
+<ul>
+    <li>Each letter should represent a different digit.</li>
+    <li>The leading digit of a multi-digit number must not be zero.</li>
+    <li>All tests always have one answer.</li>
+</ul>
+</p>
+
+<p>
+    <strong>Examples:</strong>
+</p>
+
+<p style="text-align: center;">
+    <img title="example_01" src="{{MEDIA}}example_01.svg" alt="example_01" style="vertical-align:top; width:310px;"/>
+    <img title="example_02" src="{{MEDIA}}example_02.svg" alt="example_02" style="width:340px;"/>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">
+assert cryptarithm_solver(['SEND', 'MORE', 'MONEY']) == {'S': 9, 'E': 5, 'N': 6, 'D': 7, 'M': 1, 'O': 0, 'R': 8, 'Y': 2}
+assert cryptarithm_solver(['SIX', 'SEVEN', 'SEVEN', 'TWENTY']) == {'Y': 4, 'X': 0, 'N': 2, 'I': 5, 'E': 8, 'T': 1, 'S': 6, 'V': 7, 'W': 3}
+</pre>
+
+
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Input:</strong> The list of words (A list of string)
+</p>
+
+<p>
+    <strong>Output:</strong> The dictionary that the alphabets corresponds to the one-digit numbers (A dictionary)
+</p>
+
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<!-- <p class="for_info_only">
+
+    <strong>How it’s used:</strong>
+    <i>(math is used everywhere)</i>
+</p> -->
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Precondition:</strong>
+    <ul>
+    <li> len(words) <= 10</li>
+    </ul>
+</p>
