@@ -1,0 +1,64 @@
+<!-- Describe task in general -->
+
+<p style="text-align: justify;">
+Dies ist ein Auftrag, einen Solver für das <a href="https://en.wikipedia.org/wiki/Verbal_arithmetic">cryptarithmetic  puzzle</a> zu erstellen.
+Bei diesem Rätsel muss jedem Buchstaben eine einstellige Zahl zugeordnet werden, um die Berechnung abzuschließen.
+</p>
+<p>
+    Sie erhalten eine Liste von Wörtern.
+
+Das letzte Wort ist die Summe.
+Sie müssen ein Wörterbuch mit den Alphabeten als Schlüssel und den einstelligen Zahlen als Werte zurückgeben.
+</p>
+
+<p style="text-align: justify;">
+    <strong>HINWEIS:</strong>
+<ul>
+    <li>Jeder Buchstabe sollte für eine andere Ziffer stehen.</li>
+    <li>Die führende Ziffer einer mehrstelligen Zahl darf nicht Null sein.</li>
+    <li>Alle Tests haben immer eine Antwort.</li>
+</ul>
+</p>
+
+<p>
+    <strong>Beispiele:</strong>
+</p>
+
+<p style="text-align: center;">
+    <img title="example_01" src="{{MEDIA}}example_01.svg" alt="example_01" style="vertical-align:top; width:310px;"/>
+    <img title="example_02" src="{{MEDIA}}example_02.svg" alt="example_02" style="width:340px;"/>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">
+assert cryptarithm_solver(['SEND', 'MORE', 'MONEY']) == {'S': 9, 'E': 5, 'N': 6, 'D': 7, 'M': 1, 'O': 0, 'R': 8, 'Y': 2}
+assert cryptarithm_solver(['SIX', 'SEVEN', 'SEVEN', 'TWENTY']) == {'Y': 4, 'X': 0, 'N': 2, 'I': 5, 'E': 8, 'T': 1, 'S': 6, 'V': 7, 'W': 3}
+</pre>
+
+
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Die Liste der Wörter (Eine Liste von Zeichenketten)
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Das Wörterbuch, in dem die Alphabete den einstelligen Zahlen entsprechen (Ein Wörterbuch)
+</p>
+
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<!-- <p class="for_info_only">
+
+    <strong>How it’s used:</strong>
+    <i>(math is used everywhere)</i>
+</p> -->
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Vorbedingung:</strong>
+    <ul>
+    <li> len(Wörter) &lt;= 10</li>
+    </ul>
+</p>
