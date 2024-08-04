@@ -1,0 +1,64 @@
+<!-- Describe task in general -->
+
+<p style="text-align: justify;">
+Це завдання полягає у створенні розв'язувача для головоломки <a href="https://en.wikipedia.org/wiki/Verbal_arithmetic">cryptarithmetic  puzzle</a>.
+У цій головоломці кожній букві потрібно поставити у відповідність одноцифрове число, щоб завершити обчислення.
+</p>
+<p>
+    Вам задано список слів.
+
+Останнє слово є сумою.
+Ви повинні повернути словник, у якому алфавіти є ключами, а одноцифрові числа - значеннями.
+</p>
+
+<p style="text-align: justify;">
+    <strong>ЗАУВАЖЕННЯ:</strong>
+<ul>
+    <li>Кожна літера повинна відповідати окремій цифрі.</li>
+    <li>Перша цифра багатозначного числа не повинна бути нулем.</li>
+    <li>Всі тести завжди мають одну відповідь.</li>
+</ul>
+</p>
+
+<p>
+    <strong>Приклади:</strong>
+</p>
+
+<p style="text-align: center;">
+    <img title="example_01" src="{{MEDIA}}example_01.svg" alt="example_01" style="vertical-align:top; width:310px;"/>
+    <img title="example_02" src="{{MEDIA}}example_02.svg" alt="example_02" style="width:340px;"/>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">
+assert cryptarithm_solver(['SEND', 'MORE', 'MONEY']) == {'S': 9, 'E': 5, 'N': 6, 'D': 7, 'M': 1, 'O': 0, 'R': 8, 'Y': 2}
+assert cryptarithm_solver(['SIX', 'SEVEN', 'SEVEN', 'TWENTY']) == {'Y': 4, 'X': 0, 'N': 2, 'I': 5, 'E': 8, 'T': 1, 'S': 6, 'V': 7, 'W': 3}
+</pre>
+
+
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Вхідні дані:</strong> Список слів (A list of string)
+</p>
+
+<p>
+   <strong>Вихідні дані:</strong> Словник, у якому алфавіти відповідають одноцифровим числам (A dictionary)
+</p>
+
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<!-- <p class="for_info_only">
+
+    <strong>How it’s used:</strong>
+    <i>(math is used everywhere)</i>
+</p> -->
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Передумова:</strong>
+    <ul>
+    <li> len(words) &lt;= 10</li>
+    </ul>
+</p>
